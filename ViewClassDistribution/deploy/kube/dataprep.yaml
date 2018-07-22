@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dataclasssvc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8888
+    targetPort: 8888
+    protocol: TCP
+  selector:
+    app: dataclassapp
+    version: v1
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: dataclassdeploy
+spec:
+  selector:
+    matchLabels:
+      app: dataclassapp
+      version: v1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dataclassapp
+        version: v1
+    spec:
+      containers:
+      - image: ***REMOVED***/ntfish-classdist:v1 # UPDATE ACR SERVER
+        name: azure
+        ports:
+        - containerPort: 8888
+        volumeMounts:
+          - name: azure
+            mountPath: /mnt/z
+        env: # SET ENV VARIABLES
+        - name: MYVAR
+          value: MYVARVALUE
+      volumes:
+      - name: azure
+        azureFile:
+          secretName: storage-secret
+          shareName: aks
+          readOnly: false

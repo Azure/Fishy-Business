@@ -1,0 +1,34 @@
+apiVersion: 2018-06-01
+location: southeastasia
+name: ntfishdataprep
+properties:
+  containers:
+  - name: ntfishdataprep
+    properties:
+      environmentVariables:
+        - "name": "COMPUTERVISION_KEY"
+          "secureValue": "da4c3605fcc14f699d88430dbf6b3c75"
+        - "name": "COMPUTERVISION_URL"
+          "value": "https://australiaeast.api.cognitive.microsoft.com/vision/v2.0/"
+        - "name": "SIZE_LEFT_EDGE"
+          "value": "700"
+        - "name": "VIDEO_FILE"
+          "value": "BICPB3-20170519-5.MP4"
+        - "name": "VIDEO_DIR"
+          "value": "/mnt/data/video/Bathhurst"
+        - "name": "UNPROCESSED_FRAMES_DIR"
+          "value": "/mnt/data/dataprep/unprocessed"
+        - "name": "ANALYZED_RESULTS_DIR"
+          "value": "/mnt/data/dataprep/analyzed"
+        - "name": "PROCESSED_FRAMES_DIR"
+          "value": "/mnt/data/dataprep/processed"
+      image: laceacr01/ntfish-dataprep
+      ports: []
+      resources:
+        requests:
+          cpu: 2.0
+          memoryInGB: 8
+  osType: Linux
+  restartPolicy: Always
+tags: null
+type: Microsoft.ContainerInstance/containerGroups
