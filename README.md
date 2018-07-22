@@ -7,5 +7,5 @@ Deploy recomposable end-to-end machine learning pipelines using single-responsib
 ![Instance Segmentation Pipeline](InstanceSegmentationPipeline.jpg "Instance Segmentation Pipeline")
 
 ### Credits
-https://github.com/multimodallearning/pytorch-mask-rcnn
-https://github.com/michhar/custom-jupyterhub-linux-vm
+* [multimodallearning](https://github.com/multimodallearning) / [pytorch-mask-rcnn](https://github.com/multimodallearning/pytorch-mask-rcnn)
+* [michhar](https://github.com/michhar) / [custom-jupyterhub-linux-vm](https://github.com/michhar/custom-jupyterhub-linux-vm)
