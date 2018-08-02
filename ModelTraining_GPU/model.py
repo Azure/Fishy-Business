@@ -1404,7 +1404,7 @@ class MaskRCNN(nn.Module):
     """Encapsulates the Mask RCNN model functionality.
     """
 
-    def __init__(self, config, model_dir):
+    def __init__(self, config, model_dir, writer=None):
         """
         config: A Sub-class of the Config class
         model_dir: Directory to save training logs and trained weights
@@ -1417,6 +1417,7 @@ class MaskRCNN(nn.Module):
         self.initialize_weights()
         self.loss_history = []
         self.val_loss_history = []
+        self.writer = writer
 
     def build(self, config):
         """Build Mask R-CNN architecture.
@@ -1801,7 +1802,11 @@ class MaskRCNN(nn.Module):
             # Statistics
             self.loss_history.append([loss, loss_rpn_class, loss_rpn_bbox, loss_mrcnn_class, loss_mrcnn_bbox, loss_mrcnn_mask])
             self.val_loss_history.append([val_loss, val_loss_rpn_class, val_loss_rpn_bbox, val_loss_mrcnn_class, val_loss_mrcnn_bbox, val_loss_mrcnn_mask])
-#             visualize.plot_loss(self.loss_history, self.val_loss_history, save=True, log_dir=self.log_dir)
+
+            if not self.writer is None:
+                visualize.plot_loss_tensorboard(self.loss_history, self.val_loss_history, self.writer)
+            else:
+                visualize.plot_loss(self.loss_history, self.val_loss_history, save=True, log_dir=self.log_dir)
 
             # Save model
             torch.save(self.state_dict(), self.checkpoint_path.format(epoch))
