@@ -7,21 +7,20 @@ Licensed under the MIT License (see LICENSE for details)
 Written by Waleed Abdulla
 """
 
-import os
-import random
-import itertools
-import colorsys
+import colorsys, itertools, os, random, utils
 import numpy as np
-from skimage.measure import find_contours
+import matplotlib.lines as lines
+import matplotlib.patches as patches
 import matplotlib.pyplot as plt
+
+from matplotlib.patches import Polygon
+from skimage.measure import find_contours
+from tensorboardX import SummaryWriter
+
 if "DISPLAY" not in os.environ:
     plt.switch_backend('agg')
-import matplotlib.patches as patches
-import matplotlib.lines as lines
-from matplotlib.patches import Polygon
-
-import utils
-
+    
+writer = None
 
 ############################################################
 #  Visualization
@@ -489,4 +488,24 @@ def plot_loss(loss, val_loss, save=True, log_dir=None):
         plt.show(block=False)
         plt.pause(0.1)
 
+def plot_loss_tensorboard(loss, val_loss, writer, log_dir=None):
+    loss = np.array(loss)
+    val_loss = np.array(val_loss)
 
+    writer.add_scalar('Train/Loss', loss[:, 0][-1], len(loss[:, 0]))
+    writer.add_scalar('Validate/Loss', val_loss[:, 0][-1], len(val_loss[:, 0]))
+    
+    writer.add_scalar('Train/RPN Class Loss', loss[:, 1][-1], len(loss[:, 1]))
+    writer.add_scalar('Validate/RPN Class Loss', val_loss[:, 1][-1], len(val_loss[:, 1]))
+    
+    writer.add_scalar('Train/RPN BBox Loss', loss[:, 2][-1], len(loss[:, 2]))
+    writer.add_scalar('Validate/RPN BBox Loss', val_loss[:, 2][-1], len(val_loss[:, 2]))
+    
+    writer.add_scalar('Train/MRCNN Class Loss', loss[:, 3][-1], len(loss[:, 3]))
+    writer.add_scalar('Validate/MRCNN Class Loss', val_loss[:, 3][-1], len(val_loss[:, 3]))
+    
+    writer.add_scalar('Train/MRCNN BBox Loss', loss[:, 4][-1], len(loss[:, 4]))
+    writer.add_scalar('Validate/MRCNN BBox Loss', val_loss[:, 4][-1], len(val_loss[:, 4]))
+    
+    writer.add_scalar('Train/MRCNN Mask Loss', loss[:, 5][-1], len(loss[:, 5]))
+    writer.add_scalar('Validate/MRCNN Mask Loss', val_loss[:, 5][-1], len(val_loss[:, 5]))
