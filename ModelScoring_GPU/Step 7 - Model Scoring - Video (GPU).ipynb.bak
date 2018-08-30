@@ -22,11 +22,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [],
    "source": [
-    "import coco, cv2, glob, h5py, imutils, json, math, matplotlib, os, PIL, random, re, skimage, sys, time, torch\n",
+    "import coco, cv2, glob, h5py, json, math, matplotlib, os, PIL, random, re, skimage, sys, time, torch\n",
     "import matplotlib.lines as lines\n",
     "import matplotlib.patches as patches\n",
     "import matplotlib.pyplot as plt\n",
@@ -38,7 +38,6 @@
     "from azure.storage.blob import BlockBlobService\n",
     "from matplotlib.patches import Polygon\n",
     "from PIL import Image, ImageOps\n",
-    "from pyimagesearch.centroidtracker import CentroidTracker\n",
     "from skimage import draw\n",
     "from skimage.measure import find_contours\n",
     "from torch.autograd import Variable\n",
@@ -85,7 +84,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -111,7 +110,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 35,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -349,7 +348,7 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Copying to /home/wonderwoman/Machine-Learning-Containers/ModelScoring_GPU/mask_rcnn_custom_0160.pth\n"
+      "Copying to /home/wonderwoman/ntfish-modeltraining-gpu/mask_rcnn_custom_0160.pth\n"
      ]
     }
    ],
@@ -411,12 +410,12 @@
       "BACKBONE_STRIDES               [4, 8, 16, 32, 64]\n",
       "BATCH_SIZE                     2\n",
       "BBOX_STD_DEV                   [0.1 0.1 0.2 0.2]\n",
-      "COCO_MODEL_PATH                /home/wonderwoman/Machine-Learning-Containers/ModelScoring_GPU/mask_rcnn_custom_0160.pth\n",
+      "COCO_MODEL_PATH                /home/wonderwoman/ntfish-modeltraining-gpu/mask_rcnn_custom_0160.pth\n",
       "DETECTION_MAX_INSTANCES        100\n",
       "DETECTION_MIN_CONFIDENCE       0.7\n",
       "DETECTION_NMS_THRESHOLD        0.3\n",
       "GPU_COUNT                      1\n",
-      "IMAGENET_MODEL_PATH            /home/wonderwoman/Machine-Learning-Containers/ModelScoring_GPU/resnet50_imagenet.pth\n",
+      "IMAGENET_MODEL_PATH            /home/wonderwoman/ntfish-modeltraining-gpu/resnet50_imagenet.pth\n",
       "IMAGES_PER_GPU                 2\n",
       "IMAGE_MAX_DIM                  1920\n",
       "IMAGE_MIN_DIM                  800\n",
@@ -497,7 +496,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 14,
    "metadata": {
     "scrolled": false
    },
@@ -534,7 +533,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 15,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -547,7 +546,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 16,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -573,7 +572,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 17,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -585,7 +584,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 29,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -656,22 +655,6 @@
     "    plt.close(fig)\n",
     "    \n",
     "    return masked_image.astype(np.uint8), buffer"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "### Counts"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 23,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "centroidTracker = CentroidTracker()"
    ]
   },
   {
