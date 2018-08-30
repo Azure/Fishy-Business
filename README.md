@@ -1,10 +1,6 @@
 ## Instance Segmentation Pipeline - Mask R-CNN, PyTorch
 
-Easily create custom computer vision models to detect and mask objects in your videos for your business scenarios.
-* Counts
-* Movement
-* Shape
-* Proportions
+Easily create custom computer vision models to detect and mask objects in your images and video for counting, movement, shape, and proportions.
 
 ![Instance Segmentation Pipeline](InstanceSegmentationPipeline.jpg "Instance Segmentation Pipeline")
 
