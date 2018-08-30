@@ -3,6 +3,7 @@
 Easily create custom computer vision models to detect and mask objects in your videos for your business scenarios.
 * Counts
 * Movement
+* Shape
 * Proportions
 
 ![Instance Segmentation Pipeline](InstanceSegmentationPipeline.jpg "Instance Segmentation Pipeline")
