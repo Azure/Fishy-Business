@@ -1,5 +1,7 @@
 ## Instance Segmentation Pipeline - Mask R-CNN, PyTorch
 
+Easily create custom computer vision models to detect and mask obects in your videos for your business scenarios.
+
 ![Instance Segmentation Pipeline](InstanceSegmentationPipeline.jpg "Instance Segmentation Pipeline")
 
 * Frame Reduction and Proposal - From a video, retain only the frames consisting of the visual content you're interested in, using the [Cognitive Services, Scence and Activity Recognition Service](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#analyze).
