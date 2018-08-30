@@ -4,13 +4,13 @@ Easily create custom computer vision models to detect and mask objects in your i
 
 ![Instance Segmentation Pipeline](InstanceSegmentationPipeline.jpg "Instance Segmentation Pipeline")
 
-* Frame Reduction and Proposal - From a video, retain only the frames consisting of the visual content you're interested in, using the [Cognitive Services, Scence and Activity Recognition Service](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#analyze).
-* Frame Annotation
-* Visualise Class Distribution
-* Prepare Training Dataset
-* View Training Dataset
-* Model Training
-* Model Scoring
+1. Frame Reduction and Proposal - From a video, retain only the frames consisting of the visual content you're interested in, using the [Cognitive Services, Scence and Activity Recognition Service](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#analyze).
+2. Frame Annotation
+3. Visualise Class Distribution
+4. Prepare Training Dataset
+5. View Training Dataset
+6. Model Training
+7. Model Scoring
     * Image
     * Video
 
