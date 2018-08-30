@@ -6,7 +6,7 @@ Deploy recomposable end-to-end machine learning pipelines using single-responsib
 
 ![Instance Segmentation Pipeline](InstanceSegmentationPipeline.jpg "Instance Segmentation Pipeline")
 
-* Frame Reduction and Proposal
+* Frame Reduction and Proposal - From a video, retain only the frames consisting of the visual content you're interested in, using the [Cognitive Services, Scence and Activity Recognition Service](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#analyze).
 * Frame Annotation
 * Visualise Class Distribution
 * Prepare Training Dataset
