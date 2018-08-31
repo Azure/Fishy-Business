@@ -4,7 +4,7 @@ Easily create custom computer vision models to detect and mask objects in your i
 
 ![Instance Segmentation Pipeline](InstanceSegmentationPipeline.jpg "Instance Segmentation Pipeline")
 
-1. **Frame Reduction and Proposal** - From a video, retain only the frames consisting of the visual content you're interested in, using the [Cognitive Services, Scence and Activity Recognition Service](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#analyze).
+1. **Frame Reduction and Proposal** - From a video, retain only the frames consisting of the visual content you're interested in, using the [Cognitive Services, Scene and Activity Recognition Service](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#analyze).
 2. **Frame Annotation** - Annotate frames using [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/), [COCO Annotation UI](https://github.com/tylin/coco-ui), [Labelbox](https://labelbox.com/) or another image annotation tool.
 3. **Visualise Class Distribution** - View the accumulation of samples per class. Extend this notebook to describe frames using metadata for subsetting.
 4. **Prepare Training Dataset** - Create Training and Validation sets using metadata to subset
