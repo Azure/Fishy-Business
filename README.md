@@ -9,7 +9,7 @@ Easily create custom computer vision models to detect and mask objects in your i
 3. **Visualise Class Distribution** - View the accumulation of samples per class. Extend this notebook to describe frames using custom metadata for subsetting.
 4. **Prepare Training Dataset** - Create Training and Validation sets using metadata to subset.
 5. **View Training Dataset** - View the Training and Validation sets - and right any wrongs from annotating frames - prior to model training.
-6. **Model Training** - Let the magic begin. Be sure to  specify the Training and Validation set and initial model weights, and experiment with different training regimes.
+6. **Model Training** - Let the magic begin. Be sure to  specify the Training and Validation set and initial model weights, and then experiment with different training regimes.
 7. **Model Scoring**
     * Image
     * Video
