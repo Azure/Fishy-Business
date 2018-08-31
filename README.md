@@ -6,7 +6,7 @@ Easily create custom computer vision models to detect and mask objects in your i
 
 1. Frame Reduction and Proposal - From a video, retain only the frames consisting of the visual content you're interested in, using the [Cognitive Services, Scence and Activity Recognition Service](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#analyze).
 2. Frame Annotation - Annotate frames from Step 1 using [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/), [COCO Annotation UI](https://github.com/tylin/coco-ui), [Labelbox](https://labelbox.com/) or another image annotation tool.
-3. Visualise Class Distribution - Visualise the accumulation of samples and the count of samples per class
+3. Visualise Class Distribution - View the accumulation of samples per class
 4. Prepare Training Dataset
 5. View Training Dataset
 6. Model Training
