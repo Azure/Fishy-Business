@@ -3,7 +3,7 @@
 # running Jupyterhub.
 #
 # Build with the following:
-#  docker build --build-arg USER_PW=$USER_PASSWD -t <dockerhub username>/<image name> -f Linux_py36.dockerfile .
+#  docker build --build-arg USER_PW=$USER_PASSWD -t <dockerhub username>/<image name> -f Linux_py35_GPU_PYTorch.dockerfile .
 #
 # Run with:
 # docker run -it -v /var/run/docker.sock:/var/run/docker.sock -p 8788:8788 --expose=8788 <dockerhub username>/<image name>
