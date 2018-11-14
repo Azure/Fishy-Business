@@ -1,16 +1,16 @@
+# Build container and push to Development Azure Container Registry
 $subscription = "3191ba83-be2b-4b29-8409-f06e2fbb65bd"
-$rg_name = "MLADSF2018"
 $acr_name = "MLADSF2018"
 
 "Set Subscription"
 az account set --subscription $subscription
 
 "Build Container"
-$acr_login_server = az acr show --name $acr_name --query loginServer --output tsv
-
 cd .\Container
 
 docker build -t frame_reduction .
+
+$acr_login_server = az acr show --name $acr_name --query loginServer --output tsv
 
 $tag = "{0}/frame_reduction" -f $acr_login_server
 
