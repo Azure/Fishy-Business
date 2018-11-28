@@ -1,6 +1,9 @@
 # Build container and push to Development Azure Container Registry
 $subscription = "3191ba83-be2b-4b29-8409-f06e2fbb65bd"
-$acr_name = "MLADSF2018"
+$acr_name = "InstanceSegmentation"
+
+"Login"
+az login
 
 "Set Subscription"
 az account set --subscription $subscription
