@@ -11,13 +11,13 @@ az account set --subscription $subscription
 "Build Container"
 cd .\Container
 
-docker build -t frame_reduction .
+docker build -t view_class_distribution .
 
 $acr_login_server = az acr show --name $acr_name --query loginServer --output tsv
 
-$tag = "{0}/frame_reduction" -f $acr_login_server
+$tag = "{0}/view_class_distribution" -f $acr_login_server
 
-docker tag frame_reduction $tag
+docker tag view_class_distribution $tag
 
 "Push Container to Azure Container Registry"
 
