@@ -11,9 +11,53 @@ Easily create custom computer vision models to detect and mask objects in your i
 5. **View Training Dataset** - View the Training and Validation sets - and right any wrongs from annotating frames - prior to model training.
 6. **Model Training** - Let the magic begin. Be sure to  specify the Training and Validation set and initial model weights, and then experiment with different training regimes.
 7. **Model Scoring**
-    * Image
-    * Video
 8. **Frame Proposal**
+
+## Setup
+1. Create a Storage Account -
+    * Add File Shares -
+        * frames
+        * labeledframes
+        * modeltraining
+        * modelweights
+        * video
+
+2. Deploy a [Data Science Virtual Machine for Linux (Ubuntu)]( https://azuremarketplace.microsoft.com/en-in/marketplace/apps/microsoft-ads.linux-data-science-vm-ubuntu)
+    * Add Inbound Port Rules -
+        * FrameReductionNotebook - 8888
+        * ViewClassDistributionNotebook - 8889
+        * CreateMetadataNotebook - 8890
+        * PrepareTrainingDatasetNotebook - 8891
+        * ModelTrainingNotebook - 8892
+        * ModelScoringNotebook - 8893
+        * FrameProposalNotebook - 8894
+
+    * Configure DNS Name -
+        * \<DNS Name Label>.australiaeast.cloudapp.azure.com
+
+
+3. `ssh <Username>@<Public IP address>`
+
+4. Create directories
+    * /mnt/frames
+    * /mnt/video/processed
+    * /mnt/video/unprocessed
+
+5. Mount directories
+    * sudo mount -t cifs //instancesegmentation.file.core.windows.net/frames /mnt/frames -o vers=3.0,username=instancesegmentation,password=<Key>,dir_mode=0777,file_mode=0777,sec=ntlmssp
+    * sudo mount -t cifs //instancesegmentation.file.core.windows.net/video /mnt/video -o vers=3.0,username=instancesegmentation,password=<Key>,dir_mode=0777,file_mode=0777,sec=ntlmssp
+
+6. `git clone https://github.com/Azure/Machine-Learning-Containers.git`
+7. `pip install pip==9.0.1`
+8. `cd /Machine-Learning-Containers/Containers/<Container Name>`
+9. `chmod 777 Build.sh`
+10. `chmod 777 Deploy.sh`
+11. `./Build.sh`
+12. `./Deploy.sh`
+13. `docker container list`
+14. `docker logs <Name>`
+15. Copy Jupyter Notebook URL
+```
 
 ### Credits
 * [multimodallearning](https://github.com/multimodallearning) / [pytorch-mask-rcnn](https://github.com/multimodallearning/pytorch-mask-rcnn)
