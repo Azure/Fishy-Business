@@ -4,9 +4,9 @@ acr_name="InstanceSegmentationPipeline"
 az login
 az account set --subscription $subscription
 cd ./Container
-docker build -t view_class_distribution .
+docker build -t create_metadata .
 acr_login_server=$(az acr show --name $acr_name --query loginServer --output tsv)
-tag="$acr_login_server/view_class_distribution"
-docker tag view_class_distribution $tag
-az acr login --name $acr_name
-docker push $tag
+tag="$acr_login_server/create_metadata"
+docker tag create_metadata "$tag"
+az acr login --name "$acr_name"
+docker push "$tag"
