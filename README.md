@@ -15,15 +15,6 @@ Easily create custom computer vision models to detect and mask objects in your i
     * Video
 8. **Frame Proposal**
 
-## Setup
-### Windows
-1. Install [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
-2. Install `kubectl`
-    * [PowerShell Gallery](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-powershell-from-psgallery), or
-    * [Chocolatey](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-powershell-from-psgallery)
-3. Install [Helm](https://docs.helm.sh/using_helm/#installing-helm)
-4. Install [Docker](https://docs.docker.com/docker-for-windows/install/)
-
 ### Credits
 * [multimodallearning](https://github.com/multimodallearning) / [pytorch-mask-rcnn](https://github.com/multimodallearning/pytorch-mask-rcnn)
 * [michhar](https://github.com/michhar) / [custom-jupyterhub-linux-vm](https://github.com/michhar/custom-jupyterhub-linux-vm)
