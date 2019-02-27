@@ -35,31 +35,31 @@ Easily create custom computer vision models to detect and mask objects in your i
     * Configure DNS Name -
         * \<DNS Name Label>.australiaeast.cloudapp.azure.com
 
+3. Create Cognitive Services - Computer Vision Service
 
-3. `ssh <Username>@<Public IP address>`
+4. `ssh <Username>@<Public IP address>`
 
-4. Create directories
+5. Create directories
     * /mnt/frames
     * /mnt/video/processed
     * /mnt/video/unprocessed
 
-5. Mount directories
+6. Mount directories
     * sudo mount -t cifs //instancesegmentation.file.core.windows.net/frames /mnt/frames -o vers=3.0,username=instancesegmentation,password=<Key>,dir_mode=0777,file_mode=0777,sec=ntlmssp
     * sudo mount -t cifs //instancesegmentation.file.core.windows.net/video /mnt/video -o vers=3.0,username=instancesegmentation,password=<Key>,dir_mode=0777,file_mode=0777,sec=ntlmssp
 
-6. `git clone https://github.com/Azure/Machine-Learning-Containers.git`
-7. `pip install pip==9.0.1`
-8. `cd /Machine-Learning-Containers/Containers/<Container Name>`
-9. `chmod 777 Build.sh`
-10. `chmod 777 Deploy.sh`
-11. `./Build.sh`
-12. `./Deploy.sh`
-13. `docker container list`
-14. `docker logs <Name>`
-15. Copy Jupyter Notebook URL
-```
+7. `git clone https://github.com/Azure/Machine-Learning-Containers.git`
+8. `pip install pip==9.0.1`
+9. `cd /Machine-Learning-Containers/Containers/<Container Name>`
+10. `chmod 777 Build.sh`
+11. `chmod 777 Deploy.sh`
+12. `./Build.sh`
+13. `./Deploy.sh`
+14. `docker container list`
+15. `docker logs <Name>`
+16. Copy Jupyter Notebook URL
 
-### Credits
+## Credits
 * [multimodallearning](https://github.com/multimodallearning) / [pytorch-mask-rcnn](https://github.com/multimodallearning/pytorch-mask-rcnn)
 * [michhar](https://github.com/michhar) / [custom-jupyterhub-linux-vm](https://github.com/michhar/custom-jupyterhub-linux-vm)
 * [Azadehkhojandi](https://github.com/Azadehkhojandi) / [computer-vision-fish-frame-proposal](https://github.com/Azadehkhojandi/computer-vision-fish-frame-proposal)
