@@ -8,6 +8,7 @@ RUN apt-get install -y make
 
 # Set the working directory to /
 WORKDIR /
+
 # Copy the current directory contents into the container at /
 COPY . /
 
@@ -19,6 +20,3 @@ WORKDIR /notebooks
 
 # Start jupyter
 ENTRYPOINT ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
-
-# Define environment variable
-# ENV COMPUTERVISION_URL https://australiaeast.api.cognitive.microsoft.com/vision/v2.0/

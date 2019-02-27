@@ -8,9 +8,15 @@ RUN apt-get install -y make
 
 # Set the working directory to /
 WORKDIR /
+
 # Copy the current directory contents into the container at /
 COPY . /
 
+# Install python requirements
 RUN make requirements
 
-ENTRYPOINT ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+# Set the container working directory to the user home folder
+WORKDIR /notebooks
+
+# Start jupyter
+ENTRYPOINT ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8889", "--no-browser", "--allow-root"]
