@@ -1,4 +1,4 @@
-## Instance Segmentation Pipeline - Mask R-CNN, PyTorch
+## Instance Segmentation Pipeline, using Mask R-CNN, PyTorch with an Azure Data Science VM, to count fish in Baited Remote Underwater Video.
 
 Easily create custom computer vision models to detect and mask objects in your images and video for counting, movement, shape[,](https://www.grammarly.com/blog/what-is-the-oxford-comma-and-why-do-people-care-so-much-about-it/) and proportions.
 
