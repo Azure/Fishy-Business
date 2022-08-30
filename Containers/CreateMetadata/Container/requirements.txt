@@ -1,5 +1,5 @@
 -e .
-opencv-python-headless==3.4.1.15
+opencv-python-headless==4.2.0.32
 pandas==0.23.0
 pillow==9.0.1
 python-dotenv>=0.5.1
